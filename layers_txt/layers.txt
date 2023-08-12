@@ -1,0 +1,27 @@
+{
+  "layers": [
+    {
+      "type": "Layer",
+      "id": "",
+      "title": "坂出市法務省地図",
+      "iconUrl": "",
+      "url": "./data/id_001_37203__4_r.geojson",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
+    },
+    {
+      "type": "Layer",
+      "iconUrl": "",
+      "url": "./layers_topic_20230506noto.txt",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "html": ""
+    }
+  ]
+}
