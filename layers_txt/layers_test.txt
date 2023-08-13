@@ -2,7 +2,7 @@
   "layers": [
     {
       "type": "Layer",
-      "id": "001",
+      "id": "id_001",
       "title": "坂出市法務省地図",
       "iconUrl": "",
       "url": "../data/id_001_37203__4_r.geojson",

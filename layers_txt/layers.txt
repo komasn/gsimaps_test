@@ -1,8 +1,5 @@
 [
 	{
-		"url":"./layers_topic_20230629rain.txt"
-	},
-	{
 		"url":"./layers_test.txt"
 	}
 ]
