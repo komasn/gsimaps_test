@@ -2,10 +2,23 @@
   "layers": [
     {
       "type": "Layer",
-      "id": "id_001",
+      "id": "",
       "title": "坂出市法務省地図",
       "iconUrl": "",
       "url": "./data/id_001_37203__4_r.geojson",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
+    },
+    {
+      "type": "Layer",
+      "id": "id_002",
+      "title": "坂出市法務省地図(ベクトルタイル)",
+      "iconUrl": "",
+      "url": "https://komasn.github.io/maptest/sakaide/{z}/{x}/{y}.pbf",
       "subdomains": "",
       "attribution": "",
       "errorTileUrl": "",
