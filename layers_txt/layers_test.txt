@@ -15,7 +15,7 @@
     },
     {
       "type": "Layer",
-      "id": "id_002",
+      "id": "",
       "title": "坂出市法務省地図(ベクトルタイル)",
       "iconUrl": "",
       "url": "https://komasn.github.io/maptest/sakaide/{z}/{x}/{y}.pbf",
