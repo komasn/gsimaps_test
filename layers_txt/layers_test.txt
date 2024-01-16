@@ -41,7 +41,7 @@
     },
     {
       "type": "Layer",
-      "id": "id_003",
+      "id": "id_004",
       "title": "外部geojson読み込みテスト02",
       "iconUrl": "",
       "url": "https://komasn.github.io/maptest/poligontest/id_001_37203__4_r.geojson",
