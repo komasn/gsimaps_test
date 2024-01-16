@@ -64,6 +64,6 @@
       "cocotile": false,
       "legendUrl": "",
       "html": ""
-    },
+    }
   ]
 }
