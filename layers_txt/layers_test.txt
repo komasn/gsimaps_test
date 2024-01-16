@@ -25,6 +25,19 @@
       "cocotile": false,
       "legendUrl": "",
       "html": ""
+    },
+    {
+      "type": "Layer",
+      "id": "id_003",
+      "title": "外部geojson読み込みテスト",
+      "iconUrl": "",
+      "url": "https://komasn.github.io/maptest/sakaide_wifi/sakaide_wifi.geojson",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
     }
   ]
 }
