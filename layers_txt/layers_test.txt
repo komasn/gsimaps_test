@@ -29,9 +29,22 @@
     {
       "type": "Layer",
       "id": "id_003",
-      "title": "外部geojson読み込みテスト",
+      "title": "外部geojson読み込みテスト01",
       "iconUrl": "",
       "url": "https://komasn.github.io/maptest/sakaide_wifi/sakaide_wifi.geojson",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
+    },
+    {
+      "type": "Layer",
+      "id": "id_003",
+      "title": "外部geojson読み込みテスト02",
+      "iconUrl": "",
+      "url": "https://komasn.github.io/maptest/poligontest/id_001_37203__4_r.geojson",
       "subdomains": "",
       "attribution": "",
       "errorTileUrl": "",
