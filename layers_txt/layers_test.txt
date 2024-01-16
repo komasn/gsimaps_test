@@ -51,6 +51,19 @@
       "cocotile": false,
       "legendUrl": "",
       "html": ""
-    }
+    },
+    {
+      "type": "Layer",
+      "id": "id_005",
+      "title": "外部geojson読み込みテスト03",
+      "iconUrl": "",
+      "url": "https://smartnews-smri.github.io/japan-topography/data/constituency/geojson/s0001/senkyoku289polygon.json",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
+    },
   ]
 }
