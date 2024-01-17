@@ -64,6 +64,19 @@
       "cocotile": false,
       "legendUrl": "",
       "html": ""
+    },
+    {
+      "type": "Layer",
+      "id": "id_006",
+      "title": "外部geojson読み込みテスト04",
+      "iconUrl": "",
+      "url": "https://opendata.takamatsu-fact.com/aed_location/data.geojson",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
     }
   ]
 }
