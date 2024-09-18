@@ -77,19 +77,6 @@
       "cocotile": false,
       "legendUrl": "",
       "html": ""
-    },
-    {
-      "type": "Layer",
-      "id": "id_007",
-      "title": "水位情報参照テスト",
-      "iconUrl": "",
-      "url": "http://sakaide:123@water.openatoms.live-on.net/d/data/wm0230001_0001/dataSet.geojson",
-      "subdomains": "",
-      "attribution": "",
-      "errorTileUrl": "",
-      "cocotile": false,
-      "legendUrl": "",
-      "html": ""
     }
   ]
 }
