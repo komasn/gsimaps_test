@@ -77,6 +77,19 @@
       "cocotile": false,
       "legendUrl": "",
       "html": ""
+    },
+    {
+      "type": "Layer",
+      "id": "id_007",
+      "title": "津波浸水想定",
+      "iconUrl": "",
+      "url": "https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_pref_data/37/{z}/{x}/{y}.png",
+      "subdomains": "",
+      "attribution": "",
+      "errorTileUrl": "",
+      "cocotile": false,
+      "legendUrl": "",
+      "html": ""
     }
   ]
 }
