@@ -84,12 +84,13 @@
       "title": "津波浸水想定",
       "iconUrl": "",
       "url": "https://disaportaldata.gsi.go.jp/raster/04_tsunami_newlegend_pref_data/37/{z}/{x}/{y}.png",
+      "opacity": 0.5,
       "subdomains": "",
       "attribution": "",
       "errorTileUrl": "",
       "cocotile": false,
       "legendUrl": "",
-      "html": ""
+      "html": "<img src=https://disaportal.gsi.go.jp/hazardmapportal/hazardmap/copyright/img/shinsui_legend3.png />"
     }
   ]
 }
