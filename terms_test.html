@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利用規約機能 - テストページ</title>
+  <link rel="stylesheet" type="text/css" href="./css/terms_of_service.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 10px;
+    }
+    .button-group {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #667eea;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #5568d3;
+    }
+    button.danger {
+      background-color: #f44336;
+    }
+    button.danger:hover {
+      background-color: #da190b;
+    }
+    .status-box {
+      margin: 20px 0;
+      padding: 15px;
+      border-left: 4px solid #667eea;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+    }
+    .status-box h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .status-item {
+      margin: 10px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .status-item strong {
+      color: #333;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+    .info-box {
+      background-color: #e3f2fd;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📋 利用規約機能 - テストページ</h1>
+    
+    <div class="info-box">
+      <strong>このページについて：</strong> 
+      利用規約機能の動作確認とテストを行うためのページです。以下のボタンを使用して各機能をテストできます。
+    </div>
+
+    <h2>テスト機能</h2>
+    
+    <div class="button-group">
+      <button onclick="showTerms()">📌 利用規約モーダルを表示</button>
+      <button onclick="checkStatus()">✓ 同意状況を確認</button>
+      <button onclick="clearData()">🔄 同意データをクリア</button>
+      <button onclick="redirectTest()">🔗 非同意ページにテスト遷移</button>
+    </div>
+
+    <h2>現在の状態</h2>
+    <div class="status-box">
+      <h3>同意状況</h3>
+      <div class="status-item">
+        <strong>同意済み:</strong> <span id="agreedStatus">-</span>
+      </div>
+      <div class="status-item">
+        <strong>同意日時:</strong> <span id="agreedTimestamp">-</span>
+      </div>
+      <div class="status-item">
+        <strong>ストレージキー:</strong> <code id="storageKey">-</code>
+      </div>
+    </div>
+
+    <h2>設定情報</h2>
+    <div class="status-box">
+      <h3>TermsOfService 設定</h3>
+      <div class="status-item">
+        <strong>非同意時遷移先:</strong> <code id="configPath">-</code>
+      </div>
+      <div class="status-item">
+        <strong>毎回表示:</strong> <span id="configEveryLoad">-</span>
+      </div>
+    </div>
+
+    <h2>テストシナリオ</h2>
+    <ol>
+      <li><strong>毎回表示の確認</strong>
+        <br>このページをリロード（またはアクセス）するたびに、
+        利用規約のモーダルが自動的に表示されます。
+      </li>
+      <li><strong>同意後の動作確認</strong>
+        <br>モーダルで「同意する」をクリックすると、モーダルが閉じてサービスが利用できます。
+        ただし、ページをリロードすると再度モーダルが表示されます。
+      </li>
+      <li><strong>非同意時の動作確認</strong>
+        <br>「同意しない」をクリックすると、<code>/terms_disagreed.html</code> に遷移します。
+      </li>
+      <li><strong>ローカルストレージ機能について</strong>
+        <br>このバージョンでは、ローカルストレージに同意情報を保存しません。
+        そのため、アクセスするたびに利用規約が表示されます。
+      </li>
+    </ol>
+
+    <h2>トラブルシューティング</h2>
+    <div class="info-box">
+      <strong>モーダルが表示されない場合：</strong><br>
+      1. ブラウザのコンソール（F12）でエラーを確認<br>
+      2. ページをリロード<br>
+      3. ブラウザのキャッシュをクリア<br>
+      <br>
+      <strong>スタイルが崩れている場合：</strong><br>
+      1. ブラウザのキャッシュをクリア<br>
+      2. CSS ファイルが正しく読み込まれているか確認（コンソール確認）
+    </div>
+
+  </div>
+
+  <!-- 利用規約スクリプト -->
+  <script type="text/javascript" src="js/terms_of_service.js"></script>
+
+  <script>
+    // ページ読み込み時に状態を更新
+    function updateStatus() {
+      var status = TermsOfService.getAgreementStatus();
+      var config = TermsOfService.config;
+
+      document.getElementById('agreedStatus').textContent = status.isAgreed ? 'はい ✓' : 'いいえ ✗';
+      document.getElementById('agreedTimestamp').textContent = status.timestamp ? status.timestamp : '未設定';
+      document.getElementById('storageKey').textContent = config.storageKey;
+      document.getElementById('configPath').textContent = config.disagreePath;
+      document.getElementById('configEveryLoad').textContent = config.showOnEveryLoad ? 'はい' : 'いいえ（初回のみ）';
+    }
+
+    // テスト用関数
+    function showTerms() {
+      TermsOfService.show();
+    }
+
+    function checkStatus() {
+      updateStatus();
+      alert('同意状況: ' + (TermsOfService.isAgreed() ? '同意済み ✓' : '未同意 ✗') + 
+            '\n同意日時: ' + (TermsOfService.getAgreementStatus().timestamp || '未設定'));
+    }
+
+    function clearData() {
+      alert('注：このバージョンではローカルストレージに同意情報を保存していません。\nアクセスするたびに利用規約が表示されます。');
+    }
+
+    function redirectTest() {
+      if (confirm('非同意ページ（/terms_disagreed.html）に遷移します。')) {
+        window.location.href = TermsOfService.config.disagreePath;
+      }
+    }
+
+    // 初期表示
+    document.addEventListener('DOMContentLoaded', function() {
+      updateStatus();
+      console.log('テストページが読み込まれました');
+      console.log('TermsOfService オブジェクト:', TermsOfService);
+    });
+  </script>
+</body>
+</html>
