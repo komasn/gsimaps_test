@@ -6,7 +6,7 @@
 var TermsOfService = {
   // 設定
   config: {
-    disagreePath: '/terms_disagreed.html' // 非同意時の遷移先
+    disagreePath: 'https://www.google.com/' // 非同意時の遷移先
   },
 
   // 初期化（毎回利用規約を表示）
