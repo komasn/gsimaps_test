@@ -1181,7 +1181,9 @@ CONFIG.BASEMAPLIST = [
     "id": "std",
     "title": "標準地図",
     "url": "https://maps.gsi.go.jp/xyz/std/{z}/{x}/{y}.png",
-    "thumb" : ""
+    "thumb" : "",
+    "maxNativeZoom": 18,
+    "maxZoom": 20
   },
 
   {
@@ -1189,27 +1191,35 @@ CONFIG.BASEMAPLIST = [
     "id": "pale",
     "title": "淡色地図",
     "url": "https://maps.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
-    "thumb" : ""
+    "thumb" : "",
+    "maxNativeZoom": 18,
+    "maxZoom": 20
   },
   {
     "layerType": "tile",
     "id": "blank",
     "title": "白地図",
     "url": "https://maps.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png",
-    "thumb" : ""
+    "thumb" : "",
+    "maxNativeZoom": 18,
+    "maxZoom": 20
   },
   {
     "layerType": "tile",
     "id": "english",
     "title": "English",
     "url": "https://maps.gsi.go.jp/xyz/english/{z}/{x}/{y}.png",
-    "thumb" : ""
+    "thumb" : "",
+    "maxNativeZoom": 18,
+    "maxZoom": 20
   },
   {
     "layerType": "tile",
     "id": "ort",
     "title": "写真",
     "url": "https://maps.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
-    "thumb" : ""
+    "thumb" : "",
+    "maxNativeZoom": 18,
+    "maxZoom": 20
   }
 ];
