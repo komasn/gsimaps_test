@@ -8852,7 +8852,10 @@ GSI.Utils.infoToLayer = function (info, noFinishMove) {
   }
   else if (info.layerType == "vector_tile") {
     // ベクトルタイル (.pbf)
-    var options = {};
+    var options = {
+      interactive: true,
+      vectorTileLayerStyles: {}
+    };
     
     if (info.subdomains && info.subdomains != "") {
       options.subdomains = info.subdomains;
@@ -8871,6 +8874,12 @@ GSI.Utils.infoToLayer = function (info, noFinishMove) {
     }
     if (info.bounds && info.bounds != "") {
       options.bounds = L.latLngBounds(info.bounds);
+    }
+    if (info.interactive !== undefined) {
+      options.interactive = info.interactive;
+    }
+    if (info.vectorTileLayerStyles) {
+      options.vectorTileLayerStyles = info.vectorTileLayerStyles;
     }
     
     // Use L.vectorGrid.protobuf for .pbf vector tiles
@@ -9137,7 +9146,10 @@ GSI.MiniMap = L.Evented.extend({
         size.width = 80;
         size.height = 80;
       }
-      var baseLayer = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png');
+      var baseLayer = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+        maxNativeZoom: 18,
+        maxZoom: 20
+      });
       this.miniMap = new L.Control.MiniMap(baseLayer, { toggleDisplay: false, width: size.width, height: size.height }).addTo(this.map);
     }
   },
