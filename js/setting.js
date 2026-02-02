@@ -442,6 +442,7 @@ CONFIG.DEFAULT = { CENTER: [36.104611, 140.084556], ZOOM: 5 };
 CONFIG.LAYERTYPELIST = {
   "kml": { caption: "KML", isTile: false },
   "tile": { caption: "タイル", isTile: true, isTileImage: true },
+  "vector_tile": { caption: "ベクトルタイル", isTile: true },
   "geojson": { caption: "GeoJSON", isTile: false },
   "topojson": { caption: "TopoJSON", isTile: false },
   "geojson_tile": { caption: "GeoJSONタイル", isTile: true },

@@ -8703,6 +8703,9 @@ GSI.LayersJSON.url2LayerType = function (url) {
       case "topojson":
         layerType = "topojson_tile";
         break;
+      case "pbf":
+        layerType = "vector_tile";
+        break;
       default:
         layerType = "tile";
         break;
@@ -8845,6 +8848,33 @@ GSI.Utils.infoToLayer = function (info, noFinishMove) {
     }
 
     layer = new GSI.VectorTileLayer(info.url, options, options2);
+
+  }
+  else if (info.layerType == "vector_tile") {
+    // ベクトルタイル (.pbf)
+    var options = {};
+    
+    if (info.subdomains && info.subdomains != "") {
+      options.subdomains = info.subdomains;
+    }
+    if ((info.minZoom == 0 || info.minZoom) && info.minZoom != "") {
+      options.minZoom = info.minZoom;
+    }
+    if ((info.maxZoom == 0 || info.maxZoom) && info.maxZoom != "") {
+      options.maxZoom = info.maxZoom;
+    }
+    if (info.maxNativeZoom && info.maxNativeZoom != "") {
+      options.maxNativeZoom = info.maxNativeZoom;
+    }
+    if (info.attribution) {
+      options.attribution = info.attribution;
+    }
+    if (info.bounds && info.bounds != "") {
+      options.bounds = L.latLngBounds(info.bounds);
+    }
+    
+    // Use L.vectorGrid.protobuf for .pbf vector tiles
+    layer = L.vectorGrid.protobuf(info.url, options);
 
   }
   else if (info.layerType == "topojson") {
@@ -12673,6 +12703,10 @@ GSI.MultiLayer = L.LayerGroup.extend({
       }
       else if (info.layerType == "topojson_tile") {
         // タイルTopoJSON
+        this.addLayer(layer, true);
+      }
+      else if (info.layerType == "vector_tile") {
+        // ベクトルタイル
         this.addLayer(layer, true);
       }
       else if (info.layerType == "topojson") {
@@ -19779,6 +19813,12 @@ GSI.MapLayerList = L.Evented.extend({
       }
       else if (info.layerType == "topojson_tile") {
         // タイルTopoJSON
+        if (!info._visibleInfo._isHidden) this.map.addLayer(info._visibleInfo.layer, true);
+        this.list.unshift(info);
+        this._initZIndexOffset(this.list, 10000);
+      }
+      else if (info.layerType == "vector_tile") {
+        // ベクトルタイル
         if (!info._visibleInfo._isHidden) this.map.addLayer(info._visibleInfo.layer, true);
         this.list.unshift(info);
         this._initZIndexOffset(this.list, 10000);
